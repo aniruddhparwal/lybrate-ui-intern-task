@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import IndividualCard from './IndividualCard'
 
 function CardsContainer({ data, searchInput }) {
     const [searchInputArray, setSearchInputArray] = useState(data)
@@ -16,7 +17,7 @@ function CardsContainer({ data, searchInput }) {
     }, [searchInput])
     return (
         <div className="cardscontainer">
-            {searchInputArray.length != 0 ? searchInputArray.map(eachCard => (<h1>{eachCard.email} {searchInput}</h1>)) : <h1>Not Found</h1>}
+            {searchInputArray.length != 0 ? searchInputArray.map(eachCard => (<IndividualCard key={eachCard.id} first_name={eachCard.first_name} last_name={eachCard.last_name} avatar={eachCard.avatar} email={eachCard.email} />)) : <h1>Not Found</h1>}
         </div>
     )
 }
