@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CardsContainer from "./Components/CardsContainer";
+import './Style/style.css'
 
 function App() {
   const [data, setData] = useState([])
@@ -9,20 +10,18 @@ function App() {
     try {
       const response = await fetch(
         'https://reqres.in/api/users?page=1',
-      ).then(res => res.json())
-
-      console.log("Result response : ", response.data)
-
+      ).then(response => response.json())
+      // console.log("Result response : ", response.data)
       setData(response.data)
-      console.log("Data recieved:", data)
+      // console.log("Data recieved:", data)
     } catch (err) {
-      console.log("True fetch error: ", err)
+      console.log("error fetched: ", err)
     }
 
   }, [])
   return (
-    <div className="App">
-      <input value={input} onChange={e => { setInput(e.target.value) }} />
+    <div className="app">
+      <input value={input} onChange={e => { setInput(e.target.value) }} placeholder="Search with Email" />
       {data.length != 0 && <CardsContainer data={data} searchInput={input} />}
     </div>
   );

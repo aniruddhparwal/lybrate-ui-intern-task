@@ -1,0 +1,54 @@
+
+.individualcard{
+    display: flex;
+    height: 100px;
+    background-color: #{$cardColor};
+    margin: 10px;
+    width: 330px;
+    @media #{$tabletview} {
+        flex-direction: column;
+        height: auto;
+        width: 20%;
+    }
+    @media #{$desktopView} {
+        flex-direction: column;
+        height: auto;
+        width: auto;
+    }
+}
+.individualcard__right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    div{
+        display: flex;
+        align-items: center;
+    }
+    .MuiSvgIcon-root {
+        margin-right: 8px;
+    }
+    @media #{$tabletview} {
+        div{
+            margin: 10px;
+            align-items: center;
+            display: flex;
+        }
+    }
+    
+}
+.individualcard__left{
+    display: flex;
+    img{
+        height: 100%;
+    object-fit: contain;
+    @media #{$tabletview} {
+        width: 100%;
+
+    }
+    @media #{$desktopView} {
+        height: 270px;
+        object-fit: contain;
+        width: auto;
+    }
+    }
+}

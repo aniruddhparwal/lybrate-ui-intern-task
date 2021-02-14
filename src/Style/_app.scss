@@ -1,0 +1,15 @@
+.app{
+    input{
+        display: flex;
+        margin: 30px auto;
+        height: 20px;
+        background-color: #{$inputColor};
+        &:focus{
+            border: none;
+        }
+    }
+}
+body{
+    background-color: #{$backgroundColor};
+    color:#{$textColor};
+}
